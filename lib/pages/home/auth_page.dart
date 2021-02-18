@@ -88,7 +88,8 @@ class AuthPage extends StatelessWidget {
                         onAccept: () {
                           RouteUtils.goBack(context);
                         },
-                        title: "Setup Facebook for Android & iOS using below url",
+                        title:
+                            "Setup Facebook for Android & iOS using below url",
                         body: Column(
                           children: [
                             RichText(

@@ -5,7 +5,6 @@ class Texts {
 }
 
 class PageTitles {
-
   static const String GenerateQr = "Generate QR";
   static const String ScanQr = "Scan QR";
 
@@ -18,7 +17,6 @@ class PageTitles {
   static const String CircularLinearBar = "Circular/Linear Bar";
   static const String EditTextField = "Edit/Text Field";
   static const String Network = "Network";
-
 }
 
 class AppRoutes {

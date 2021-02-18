@@ -1,6 +1,5 @@
 import 'package:dio/dio.dart';
 
-
 class LoggingInterceptor extends Interceptor {
   DateTime _startTime;
   DateTime _endTime;

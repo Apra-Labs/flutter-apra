@@ -36,6 +36,8 @@ dependencies:
   #state-management
   flutter_riverpod: ^0.12.4
 
+  intl: ^0.16.1
+
   #Flutter-Firebase
   #firebase_core: ^0.5.0
   #firebase_auth: ^0.18.1+1
@@ -74,6 +76,7 @@ flutter:
   #   - images/a_dot_ham.jpeg`
   assets:
     - assets/apra_logo.png
+    - assets/apra_logo_small.png
     - assets/google_logo.png
     - assets/fb_logo.png
     - assets/apple_logo.png

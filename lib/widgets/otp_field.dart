@@ -27,7 +27,7 @@ class OTPField extends StatefulWidget {
   OTPField(
       {Key key,
       this.length = 4,
-      @required this.width = 10,
+      @required this.width,
       this.fieldWidth = 30,
       this.keyboardType = TextInputType.number,
       this.style = const TextStyle(),

@@ -4,7 +4,7 @@
 // // RemoteConfigService configService = await RemoteConfigService.getInstance();
 // //   await configService.initialise();
 
-// // Get the values by 
+// // Get the values by
 // // String example = configService.example;
 
 // const String Example = "example";

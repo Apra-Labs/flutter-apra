@@ -4,10 +4,8 @@ import 'package:flutter_apra/containers/application_page.dart';
 import 'package:flutter_apra/controllers/utils.dart';
 import 'package:flutter_apra/theme.dart';
 import 'package:flutter_apra/widgets/buttons.dart';
-import 'package:flutter_apra/widgets/otp_field.dart';
 import 'package:flutter_apra/widgets/readmore.dart';
 import 'package:flutter_apra/widgets/textinput.dart';
-
 
 class EditTextField extends StatelessWidget {
   @override
@@ -24,10 +22,8 @@ class EditTextField extends StatelessWidget {
             tooltip: "More",
             itemBuilder: (_) => <PopupMenuItem>[
               new PopupMenuItem(
-                  child: Text('Change Language'),
-                  value: 'Change Language'),
-              new PopupMenuItem(
-                  child: Text('Dark Mode'), value: 'Dark Mode'),
+                  child: Text('Change Language'), value: 'Change Language'),
+              new PopupMenuItem(child: Text('Dark Mode'), value: 'Dark Mode'),
             ],
             onSelected: (i) {
               print(i);

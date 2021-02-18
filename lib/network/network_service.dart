@@ -1,7 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_apra/network/response.dart';
 
-
 String _baseUrl = '';
 
 class NetworkService {
