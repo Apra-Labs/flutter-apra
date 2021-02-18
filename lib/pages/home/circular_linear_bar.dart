@@ -17,12 +17,15 @@ class CircularLinearBar extends StatelessWidget {
             restrict: 25,
           ),
           SizedBox(
-            height: 10,
+            height: 20,
           ),
           CircularBar(
-            tag :"Bluetooth",
+            tag: "Bluetooth",
             percent: 0.4,
             restrict: 50,
+          ),
+          SizedBox(
+            height: 20,
           ),
           SizedBox(
             height: 20,
@@ -36,7 +39,7 @@ class CircularLinearBar extends StatelessWidget {
           ),
           LinearBar(
             percent: 58,
-            tag: "Download",
+            tag: "Upload",
           ),
         ],
       ),

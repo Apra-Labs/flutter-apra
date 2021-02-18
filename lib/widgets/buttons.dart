@@ -26,6 +26,7 @@ class Button extends StatelessWidget {
   Image trailingImage;
   Image leadingImage;
   MainAxisAlignment mainAxisAlignment;
+  final MainAxisSize mainAxisSize;
 
   Button(
       {@required this.label,
@@ -42,6 +43,7 @@ class Button extends StatelessWidget {
       this.leadingImage,
       this.trailingImage,
       this.mainAxisAlignment = MainAxisAlignment.spaceEvenly,
+      this.mainAxisSize = MainAxisSize.max,
       this.type = ButtonType.button}) {
     if (type == ButtonType.button) {
       borderColor = borderColor ?? Colors.transparent;
@@ -75,7 +77,7 @@ class Button extends StatelessWidget {
       onPressed: onPressed,
       child: Row(
         mainAxisAlignment: mainAxisAlignment,
-        mainAxisSize: MainAxisSize.max,
+        mainAxisSize: mainAxisSize,
         children: [
           if (leadingIcon != null) Flexible(child: leadingIcon),
           if (leadingImage != null) Flexible(child: leadingImage),

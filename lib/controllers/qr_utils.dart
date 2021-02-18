@@ -1,6 +1,5 @@
 import 'dart:convert';
 
-
 import 'package:flutter_apra/constants.dart';
 import 'package:flutter_apra/controllers/utils.dart';
 import 'package:tuple/tuple.dart';

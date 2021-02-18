@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_apra/constants.dart';
 import 'package:flutter_apra/containers/application_page.dart';
+import 'package:flutter_apra/pages/profile/profile.dart';
 import 'package:flutter_apra/providers/bottom_actionbar_provider.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -24,9 +25,7 @@ class RootPage extends StatelessWidget {
   Widget getRootWidget(int index) {
     switch (index) {
       case 0:
-        return Container(
-          child: Center(child: Text("Profile")),
-        );
+        return Profile();
       case 1:
         return Home();
       case 2:

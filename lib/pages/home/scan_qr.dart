@@ -52,7 +52,7 @@ class _ScanQrState extends State<ScanQr> {
                       height: 50.0,
                       decoration: new BoxDecoration(
                         color:
-                        flashStatus ? AppColors.danger : AppColors.primary,
+                            flashStatus ? AppColors.danger : AppColors.primary,
                         shape: BoxShape.circle,
                       ),
                       child: IconButton(

@@ -1,8 +1,9 @@
 import 'dart:convert';
 
-import 'package:flutter/material.dart';
-import 'package:tuple/tuple.dart';
 import 'package:encrypt/encrypt.dart' as encrypt;
+import 'package:flutter/material.dart';
+import 'package:flutter_apra/widgets/loading_widget.dart';
+import 'package:tuple/tuple.dart';
 
 class RouteUtils {
   static Future goToPage(BuildContext context, String route) {
@@ -55,8 +56,8 @@ class Utils {
 
   static Map<String, dynamic> decodeMap(
       {@required String payload,
-        @required String nonce,
-        @required String keyStr}) {
+      @required String nonce,
+      @required String keyStr}) {
     final key = encrypt.Key.fromUtf8(keyStr);
     final iv = encrypt.IV.fromBase64(nonce);
     final encrypter = encrypt.Encrypter(encrypt.AES(key));
@@ -67,5 +68,15 @@ class Utils {
     } catch (e) {
       return null;
     }
+  }
+
+  static Future<void> showProgressBar(
+      BuildContext context, String message) async {
+    return showDialog(
+        context: context,
+        barrierDismissible: false,
+        builder: (context) {
+          return LoadingProgressBar();
+        });
   }
 }

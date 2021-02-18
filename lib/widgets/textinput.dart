@@ -14,6 +14,9 @@ class TextInput extends StatefulWidget {
   final bool inputTypePassword;
   final String errorText;
   final int maxLength;
+  final bool filled;
+  final BorderStyle borderStyle;
+  final String labelText;
 
   TextInput(
       {@required this.onChange,
@@ -27,6 +30,9 @@ class TextInput extends StatefulWidget {
       this.inputTypePassword = false,
       this.errorText,
       this.maxLength,
+      this.labelText,
+      this.filled = true,
+      this.borderStyle = BorderStyle.none,
       this.type});
 
   @override
@@ -90,10 +96,11 @@ class _TextInputState extends State<TextInput> {
           errorText: widget.errorText,
           border: new OutlineInputBorder(
             borderRadius: BorderRadius.circular(widget.borderRadius),
-            borderSide: BorderSide(width: 0, style: BorderStyle.none),
+            borderSide: BorderSide(width: 0, style: widget.borderStyle),
           ),
-          filled: true,
+          filled: widget.filled,
           hintText: placeholder,
+          labelText: widget.labelText,
           fillColor: widget.fillColor),
       cursorColor: AppColors.primary,
     );

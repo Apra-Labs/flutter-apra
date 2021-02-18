@@ -2,15 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_apra/theme.dart';
 
 class LinearBar extends StatelessWidget {
-  Color backgroundColor;
-  double percent;
-  String tag;
-  double restrict;
+  final Color backgroundColor;
+  final double percent;
+  final String tag;
+  final double restrict;
 
   LinearBar(
-      {this.backgroundColor, @required this.percent, this.tag, this.restrict}) {
-    backgroundColor ??= AppColors.primary;
-  }
+      {this.backgroundColor = AppColors.primary,
+      @required this.percent,
+      this.tag,
+      this.restrict});
 
   @override
   Widget build(BuildContext context) {
@@ -20,8 +21,8 @@ class LinearBar extends StatelessWidget {
       children: [
         tag != null
             ? Text(tag,
-            style: TextStyle(
-                fontSize: FontSize.small, color: AppColors.textNormal))
+                style: TextStyle(
+                    fontSize: FontSize.small, color: AppColors.textNormal))
             : Container(),
         SizedBox(
           height: 5,
@@ -69,14 +70,14 @@ class LinearBar extends StatelessWidget {
               restrict == null
                   ? Container()
                   : Positioned(
-                  left:  MediaQuery.of(context).size.width / 280 * restrict,
-                  height: 100,
-                  child: SizedBox(
-                    width: 3,
-                    child: Container(
-                      color: Colors.red,
-                    ),
-                  ))
+                      left: MediaQuery.of(context).size.width / 280 * restrict,
+                      height: 100,
+                      child: SizedBox(
+                        width: 3,
+                        child: Container(
+                          color: Colors.red,
+                        ),
+                      ))
             ],
           ),
         ),
