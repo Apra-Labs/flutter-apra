@@ -5,8 +5,8 @@ on:
       - main
   pull_request:
     branches: [ main ]
-  schedule:
-    - cron:  '* * * * *'
+#   schedule:
+#     - cron:  '* * * * *'
 
 jobs:
 
@@ -21,13 +21,13 @@ jobs:
         with:
           channel: 'stable'
       # Get flutter dependencies.
-      - run: flutter pub get
+#       - run: flutter pub get
 
-      # Check for any formatting issues in the code.
-      - run: flutter format --set-exit-if-changed .
+#       # Check for any formatting issues in the code.
+#       - run: flutter format --set-exit-if-changed .
 
-      # Statically analyze the Dart code for any errors. 
-      - run: flutter analyze .
+#       # Statically analyze the Dart code for any errors. 
+#       - run: flutter analyze .
 
       # Run widget tests for our flutter project.
       #- run: flutter test
