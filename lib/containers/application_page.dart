@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_apra/containers/bottom_actionbar.dart';
+import 'package:flutter_apra/containers/drawer.dart';
 import 'package:flutter_apra/containers/fab.dart';
 
 class ApplicationPage extends StatelessWidget {
@@ -17,6 +18,7 @@ class ApplicationPage extends StatelessWidget {
   final bool extendBodyBehindAppBar;
   final bool safeArea;
   final double elevation;
+  final bool showNavigationBar;
 
   ApplicationPage(
       {this.title,
@@ -32,6 +34,7 @@ class ApplicationPage extends StatelessWidget {
       this.extendBodyBehindAppBar = false,
       this.safeArea = false,
       this.elevation = 0,
+      this.showNavigationBar = false,
       this.gradient});
 
   @override
@@ -45,16 +48,17 @@ class ApplicationPage extends StatelessWidget {
     return Scaffold(
       appBar: title != null
           ? AppBar(
-              title: Text(title),
-              actions: actions,
-              backgroundColor: appBarBackgroundColor,
-              toolbarHeight: toolbarHeight,
-              centerTitle: centerTitle,
-              elevation: elevation,
-            )
+        title: Text(title),
+        actions: actions,
+        backgroundColor: appBarBackgroundColor,
+        toolbarHeight: toolbarHeight,
+        centerTitle: centerTitle,
+        elevation: elevation,
+      )
           : null,
       backgroundColor: backgroundColor,
       extendBodyBehindAppBar: extendBodyBehindAppBar,
+      drawer: showNavigationBar ? NavigationBar() : null,
       body: Container(
         child: body,
         decoration: BoxDecoration(gradient: gradient),
