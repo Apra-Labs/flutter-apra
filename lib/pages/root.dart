@@ -12,6 +12,7 @@ class RootPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return ApplicationPage(
       title: PageTitles.ApraLabs,
+      showNavigationBar: true,
       centerTitle: true,
       padding: EdgeInsets.zero,
       body: Consumer(builder: (context, watch, _) {
