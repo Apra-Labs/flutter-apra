@@ -10,10 +10,21 @@ class SplashScreen extends StatefulWidget {
   _SplashScreenState createState() => _SplashScreenState();
 }
 
-class _SplashScreenState extends State<SplashScreen> {
+class _SplashScreenState extends State<SplashScreen>
+    with TickerProviderStateMixin {
+  AnimationController _controller;
+  Animation<double> _animation;
+
   @override
   void initState() {
-    Timer(Duration(seconds: 3),
+    _controller = AnimationController(
+        duration: const Duration(milliseconds: 2000), vsync: this, value: 0.1);
+    _animation =
+        CurvedAnimation(parent: _controller, curve: Curves.easeInCubic);
+
+    _controller.forward();
+
+    Timer(Duration(seconds: 4),
         () => RouteUtils.setRootPage(context, AppRoutes.RootPage));
     super.initState();
   }
@@ -23,10 +34,13 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Stack(children: [
-        Center(
-            child: Image(
-          image: AssetImage("assets/apra_logo.png"),
-        )),
+        ScaleTransition(
+          scale: _animation,
+          child: Center(
+              child: Image(
+            image: AssetImage("assets/apra_logo.png"),
+          )),
+        ),
         Padding(
           padding: const EdgeInsets.all(25.0),
           child: Align(
