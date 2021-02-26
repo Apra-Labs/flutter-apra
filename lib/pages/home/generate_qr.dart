@@ -17,7 +17,9 @@ class _GenerateQrState extends State<GenerateQr> {
   Widget build(BuildContext context) {
     return ApplicationPage(
       title: PageTitles.QRCode,
+      padding: EdgeInsets.zero,
       body: SingleChildScrollView(
+        padding: EdgeInsets.all(20.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
