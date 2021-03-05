@@ -77,6 +77,7 @@ flutter:
   assets:
     - assets/apra_logo.png
     - assets/apra_logo_small.png
+    - assets/appleid_button.png
     - assets/google_logo.png
     - assets/fb_logo.png
     - assets/apple_logo.png
