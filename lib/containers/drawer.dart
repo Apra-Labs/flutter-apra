@@ -41,6 +41,7 @@ class NavigationBar extends StatelessWidget {
     return Column(
       children: [
         ListTile(
+          // leading: Icon(drawerItem.icon),
           title: Text(drawerItem.value),
           onTap: () {
             Navigator.of(context).pop();

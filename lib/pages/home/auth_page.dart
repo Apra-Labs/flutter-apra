@@ -6,7 +6,10 @@ import 'package:flutter_apra/containers/application_page.dart';
 import 'package:flutter_apra/controllers/utils.dart';
 import 'package:flutter_apra/theme.dart';
 import 'package:flutter_apra/widgets/alert.dart';
+import 'package:flutter_apra/widgets/apple_sign_in_button.dart';
 import 'package:flutter_apra/widgets/buttons.dart';
+import 'package:flutter_apra/widgets/facebook_sign_in_button.dart';
+import 'package:flutter_apra/widgets/google_sign_in_button.dart';
 import 'package:flutter_apra/widgets/otp_field.dart';
 import 'package:flutter_apra/widgets/textinput.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -27,25 +30,17 @@ class AuthPage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Button(
-              label: "Log In With Google",
-              leadingImage: Image(
-                image: AssetImage("assets/google_logo.png"),
-                height: 20,
-              ),
+            GoogleSignInButton(
               onPressed: () async {
                 // GoogleSignInService googleSignInService = GoogleSignInService();
                 // User user = await googleSignInService.signInWithGoogle();
                 // print(user);
               },
-              borderRadius: 5,
-              padding: EdgeInsets.all(15),
             ),
             SizedBox(
               height: 10,
             ),
-            Button(
-              label: "Log In With Apple",
+            AppleSignInButton(
               onPressed: () async {
                 // AppleAuthService appleAuthService = AppleAuthService();
                 // if (await appleAuthService.appleSignInAvailable) {
@@ -55,31 +50,17 @@ class AuthPage extends StatelessWidget {
                 // }
                 // print("Apple Sign Not Available");
               },
-              trailingImage: Image(
-                image: AssetImage("assets/apple_logo.png"),
-                height: 30,
-              ),
-              color: Colors.black,
-              textColor: Colors.white,
-              borderRadius: 5,
-              padding: EdgeInsets.all(10),
             ),
             SizedBox(
               height: 10,
             ),
-            Button(
-              label: "Log In With Facebook",
-              leadingImage: Image(
-                image: AssetImage("assets/fb_logo.png"),
-                height: 20,
-              ),
-              color: Color.fromRGBO(24, 119, 242, 1),
-              textColor: Colors.white,
+            FacebookSignInButton(
               onPressed: () async {
                 // FacebookSignInService facebookSignInService =
                 //     FacebookSignInService();
                 // dynamic user = await facebookSignInService.signInWithFacebook();
 
+                //Remove this showDialog when setup is done
                 showDialog(
                     context: context,
                     barrierDismissible: false,
@@ -134,8 +115,6 @@ class AuthPage extends StatelessWidget {
                       );
                     });
               },
-              borderRadius: 5,
-              padding: EdgeInsets.all(15),
             ),
             SizedBox(
               height: 20,
@@ -152,7 +131,7 @@ class AuthPage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(5),
                   ),
                   child: CountryCodePicker(
-                    initialSelection: 'US',
+                    initialSelection: 'IN',
                     padding: EdgeInsets.symmetric(vertical: 20),
                     showCountryOnly: false,
                     favorite: ['US', 'IN'],
