@@ -18,7 +18,7 @@ class ApplicationPage extends StatelessWidget {
   final bool extendBodyBehindAppBar;
   final bool safeArea;
   final double elevation;
-  final bool showNavigationBar;
+  final bool showSideNavigationBar;
 
   ApplicationPage(
       {this.title,
@@ -34,7 +34,7 @@ class ApplicationPage extends StatelessWidget {
       this.extendBodyBehindAppBar = false,
       this.safeArea = false,
       this.elevation = 0,
-      this.showNavigationBar = false,
+      this.showSideNavigationBar = false,
       this.gradient});
 
   @override
@@ -58,7 +58,7 @@ class ApplicationPage extends StatelessWidget {
           : null,
       backgroundColor: backgroundColor,
       extendBodyBehindAppBar: extendBodyBehindAppBar,
-      drawer: showNavigationBar ? NavigationBar() : null,
+      drawer: showSideNavigationBar ? NavigationBar() : null,
       body: Container(
         child: body,
         decoration: BoxDecoration(gradient: gradient),

@@ -26,6 +26,10 @@
     <true/>
     <key>NSCameraUsageDescription</key>
     <string>This app needs camera access to scan QR codes</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Apra Labs uses your location to show maps functionality.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Apra Labs uses your location to show maps functionality.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

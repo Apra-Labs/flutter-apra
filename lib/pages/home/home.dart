@@ -25,6 +25,14 @@ class Home extends StatelessWidget {
             height: 20,
           ),
           Button(
+              label: "Tab Bar",
+              onPressed: () {
+                RouteUtils.goToPage(context, AppRoutes.TabBarPage);
+              }),
+          SizedBox(
+            height: 20,
+          ),
+          Button(
               label: "Network Service",
               onPressed: () {
                 RouteUtils.goToPage(context, AppRoutes.NetworkPage);

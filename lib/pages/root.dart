@@ -10,17 +10,17 @@ import 'home/home.dart';
 class RootPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ApplicationPage(
-      title: PageTitles.ApraLabs,
-      showNavigationBar: true,
-      centerTitle: true,
-      padding: EdgeInsets.zero,
-      body: Consumer(builder: (context, watch, _) {
-        final bottomIndex = watch(bottomIndexProvider.state);
-        return getRootWidget(bottomIndex);
-      }),
-      showBottomNavigationBar: true,
-    );
+    return Consumer(builder: (context, watch, _) {
+      final bottomIndex = watch(bottomIndexProvider.state);
+      return ApplicationPage(
+        title: PageTitles.ApraLabs,
+        showSideNavigationBar: showSideNavigationBar(bottomIndex),
+        centerTitle: true,
+        padding: EdgeInsets.zero,
+        body: getRootWidget(bottomIndex),
+        showBottomNavigationBar: true,
+      );
+    });
   }
 
   Widget getRootWidget(int index) {
@@ -35,6 +35,19 @@ class RootPage extends StatelessWidget {
         );
       default:
         return Container();
+    }
+  }
+
+  bool showSideNavigationBar(int index){
+    switch (index) {
+      case 0:
+        return false;
+      case 1:
+        return true;
+      case 2:
+        return false;
+      default:
+        return false;
     }
   }
 }
