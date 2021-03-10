@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_apra/containers/bottom_actionbar.dart';
+import 'package:flutter_apra/pages/home/maps/directions.dart';
+import 'package:flutter_apra/pages/home/maps/location_marker.dart';
+import 'package:flutter_apra/pages/home/maps/location_picker.dart';
 import 'package:flutter_apra/pages/home/maps/maps_demo.dart';
 
 class TabBarPage extends StatelessWidget {
   final List<IconItem> tabs = [
-    IconItem(icon: Icons.favorite, text: "Maps"),
-    IconItem(icon: Icons.access_time, text: "Picker"),
-    IconItem(icon: Icons.contact_page, text: "Marker"),
+    IconItem(icon: Icons.location_on, text: "  Maps  "),
+    IconItem(icon: Icons.add_location, text: "  Picker  "),
+    IconItem(icon: Icons.add_location_alt, text: "Markers"),
+    IconItem(icon: Icons.directions, text: "Directions"),
   ];
   @override
   Widget build(BuildContext context) {
@@ -14,11 +18,10 @@ class TabBarPage extends StatelessWidget {
       length: tabs.length,
       child: Scaffold(
         appBar: AppBar(
-          title: Text("Tabs"),
+          title: Text("Maps Demo"),
           bottom: TabBar(
-            onTap: (selectedTab) {
-              print(selectedTab);
-            },
+            onTap: (selectedTab) {},
+            isScrollable: true,
             tabs: List<Tab>.generate(
                 tabs.length,
                 (index) => Tab(
@@ -28,11 +31,23 @@ class TabBarPage extends StatelessWidget {
           ),
         ),
         body: TabBarView(
-          physics: NeverScrollableScrollPhysics(),
+            physics: NeverScrollableScrollPhysics(),
+
+            ///Remove this to make scrollable
             children: List<Widget>.generate(tabs.length, (index) {
-          if (index == 0) return MapsPage(index);
-          return Icon(tabs[index].icon);
-        })),
+              switch (index) {
+                case 0:
+                  return MapsPage();
+                case 1:
+                  return LocationPicker();
+                case 2:
+                  return LocationMarkers();
+                case 3:
+                  return Directions();
+                default:
+                  return Container();
+              }
+            })),
       ),
     );
   }

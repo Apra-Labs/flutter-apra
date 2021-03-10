@@ -98,7 +98,7 @@ class _ProfileState extends State<Profile> {
           Button(
             onPressed: () async {
               Utils.showProgressBar(context, "");
-              await Future.delayed(Duration(seconds: 20));
+              await Future.delayed(Duration(seconds: 5));
               Navigator.of(context).pop();
             },
             label: "Save",

@@ -35,33 +35,31 @@ class Alert extends StatelessWidget {
       titleTextStyle: this.titleTextStyle,
       contentPadding: EdgeInsets.all(20.0),
       content: SingleChildScrollView(
-        child: GestureDetector(
-          child: Column(
-            children: [
-              if (message != null) Text(message),
-              body ?? Container(),
-              SizedBox(height: 20),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Button(
-                      label: denyLabel,
-                      color: AppColors.light,
-                      onPressed: () {
-                        onDeny();
-                        Navigator.of(context).pop();
-                      }),
-                  Button(
-                      label: acceptLabel,
-                      color: AppColors.positive,
-                      onPressed: () {
-                        onAccept();
-                        Navigator.of(context).pop();
-                      })
-                ],
-              ),
-            ],
-          ),
+        child: Column(
+          children: [
+            if (message != null) Text(message),
+            body ?? Container(),
+            SizedBox(height: 20),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Button(
+                    label: denyLabel,
+                    color: AppColors.light,
+                    onPressed: () {
+                      onDeny();
+                      Navigator.of(context).pop();
+                    }),
+                Button(
+                    label: acceptLabel,
+                    color: AppColors.positive,
+                    onPressed: () {
+                      onAccept();
+                      Navigator.of(context).pop();
+                    })
+              ],
+            ),
+          ],
         ),
       ),
     );
