@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_apra/constants.dart';
 import 'package:flutter_apra/theme.dart';
-import 'package:flutter_apra/widgets/buttons.dart';
 
 // ignore: must_be_immutable
 class Alert extends StatelessWidget {
@@ -33,35 +32,30 @@ class Alert extends StatelessWidget {
     return AlertDialog(
       title: Align(alignment: titleAlignment, child: Text(title)),
       titleTextStyle: this.titleTextStyle,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       contentPadding: EdgeInsets.all(20.0),
       content: SingleChildScrollView(
         child: Column(
           children: [
             if (message != null) Text(message),
             body ?? Container(),
-            SizedBox(height: 20),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Button(
-                    label: denyLabel,
-                    color: AppColors.light,
-                    onPressed: () {
-                      onDeny();
-                      Navigator.of(context).pop();
-                    }),
-                Button(
-                    label: acceptLabel,
-                    color: AppColors.positive,
-                    onPressed: () {
-                      onAccept();
-                      Navigator.of(context).pop();
-                    })
-              ],
-            ),
           ],
         ),
       ),
+      actions: [
+        TextButton(
+            onPressed: () {
+              onDeny();
+              Navigator.of(context).pop();
+            },
+            child: Text(denyLabel,style: TextStyle(color: AppColors.danger),)),
+        TextButton(
+            onPressed: () {
+              onAccept();
+              Navigator.of(context).pop();
+            },
+            child: Text(acceptLabel))
+      ],
     );
   }
 }

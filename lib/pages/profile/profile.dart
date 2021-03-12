@@ -39,6 +39,7 @@ class _ProfileState extends State<Profile> {
             lastDate: DateTime(DateTime.now().year + 50),
             initialDate: DateTime.now(),
             firstDate: DateTime.now(),
+            suffixIcon: Icon(Icons.date_range),
             onDateChanged: (DateTime value) {
               print(value);
             },
@@ -95,9 +96,12 @@ class _ProfileState extends State<Profile> {
                   }),
             ],
           ),
+          SizedBox(
+            height: 20,
+          ),
           Button(
             onPressed: () async {
-              Utils.showProgressBar(context, "");
+              Utils.showProgressBar(context, message: null);
               await Future.delayed(Duration(seconds: 5));
               Navigator.of(context).pop();
             },

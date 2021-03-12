@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:encrypt/encrypt.dart' as encrypt;
 import 'package:flutter/material.dart';
+import 'package:flutter_apra/constants.dart';
 import 'package:flutter_apra/widgets/loading_widget.dart';
 import 'package:tuple/tuple.dart';
 
@@ -70,13 +71,58 @@ class Utils {
     }
   }
 
-  static Future<void> showProgressBar(
-      BuildContext context, String message) async {
+  static Future<void> showProgressBar(BuildContext context,
+      {String message}) async {
     return showDialog(
         context: context,
         barrierDismissible: false,
         builder: (context) {
-          return LoadingProgressBar();
+          return LoadingProgressBar(message);
         });
   }
+
+  static final List<CategoryItem> categoryItemsList = [
+    CategoryItem(
+        value: PageTitles.Authentication,
+        icon: Icons.add,
+        route: AppRoutes.AuthPage),
+    CategoryItem(
+        value: PageTitles.TabBar, icon: Icons.add, route: AppRoutes.TabBarPage),
+    CategoryItem(
+        value: PageTitles.Network,
+        icon: Icons.add,
+        route: AppRoutes.NetworkPage),
+    CategoryItem(
+        value: PageTitles.EditTextField,
+        icon: Icons.add,
+        route: AppRoutes.EditTextField),
+    CategoryItem(
+        value: PageTitles.GradientPage,
+        icon: Icons.add,
+        route: AppRoutes.GradientPage),
+    CategoryItem(
+        value: PageTitles.ScanQr, icon: Icons.add, route: AppRoutes.ScanQr),
+    CategoryItem(
+        value: PageTitles.GenerateQr,
+        icon: Icons.add,
+        route: AppRoutes.GenerateQr),
+    CategoryItem(
+        value: PageTitles.CircularLinearBar,
+        icon: Icons.add,
+        route: AppRoutes.CircularLinearBar),
+    CategoryItem(
+        value: PageTitles.Dialogs, icon: Icons.add, route: AppRoutes.Dialogs),
+  ];
+}
+
+class CategoryItem {
+  final String value;
+  final IconData icon;
+  final String route;
+
+  CategoryItem({
+    this.value,
+    this.icon,
+    this.route,
+  });
 }

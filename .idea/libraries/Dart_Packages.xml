@@ -114,6 +114,20 @@
             </list>
           </value>
         </entry>
+        <entry key="flutter_plugin_android_lifecycle">
+          <value>
+            <list>
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/flutter_plugin_android_lifecycle-1.0.11/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="flutter_polyline_points">
+          <value>
+            <list>
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/flutter_polyline_points-0.2.4/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="flutter_riverpod">
           <value>
             <list>
@@ -139,6 +153,20 @@
           <value>
             <list>
               <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/freezed_annotation-0.12.0/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="google_maps_flutter">
+          <value>
+            <list>
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/google_maps_flutter-1.2.0/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="google_maps_flutter_platform_interface">
+          <value>
+            <list>
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/google_maps_flutter_platform_interface-1.2.0/lib" />
             </list>
           </value>
         </entry>
@@ -303,6 +331,13 @@
             </list>
           </value>
         </entry>
+        <entry key="stream_transform">
+          <value>
+            <list>
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/stream_transform-1.2.0/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="string_scanner">
           <value>
             <list>
@@ -405,8 +440,12 @@
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/dio-3.0.10/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/encrypt-4.1.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/fake_async-1.2.0-nullsafety.1/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/flutter_plugin_android_lifecycle-1.0.11/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/flutter_polyline_points-0.2.4/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/flutter_riverpod-0.12.4/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/freezed_annotation-0.12.0/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/google_maps_flutter-1.2.0/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/google_maps_flutter_platform_interface-1.2.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/http-0.12.2/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/http_parser-3.1.4/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/in_app_purchase-0.3.5+1/lib" />
@@ -429,6 +468,7 @@
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/stack_trace-1.10.0-nullsafety.1/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/state_notifier-0.6.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/stream_channel-2.1.0-nullsafety.1/lib" />
+      <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/stream_transform-1.2.0/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/string_scanner-1.1.0-nullsafety.1/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/term_glyph-1.2.0-nullsafety.1/lib" />
       <root url="file://$USER_HOME$/.pub-cache/hosted/pub.dartlang.org/test_api-0.2.19-nullsafety.2/lib" />

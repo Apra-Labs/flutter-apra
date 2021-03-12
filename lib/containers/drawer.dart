@@ -1,21 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_apra/constants.dart';
 import 'package:flutter_apra/controllers/utils.dart';
 
 class NavigationBar extends StatelessWidget {
-  final List<DrawerItem> drawerItems = [
-    DrawerItem(value: "Expertise", icon: Icons.add, route: AppRoutes.AuthPage),
-    DrawerItem(
-        value: "Value Proposition", icon: Icons.add, route: AppRoutes.AuthPage),
-    DrawerItem(value: "About", icon: Icons.add, route: AppRoutes.AuthPage),
-    DrawerItem(value: "Leadership", icon: Icons.add, route: AppRoutes.AuthPage),
-    DrawerItem(value: "Products", icon: Icons.add, route: AppRoutes.AuthPage),
-    DrawerItem(value: "Jobs", icon: Icons.add, route: AppRoutes.AuthPage),
-    DrawerItem(value: "Blog", icon: Icons.add, route: AppRoutes.AuthPage),
-  ];
-
   @override
   Widget build(BuildContext context) {
+    final drawerItems = Utils.categoryItemsList;
+
     return Container(
       color: Colors.white,
       width: MediaQuery.of(context).size.width / 1.3,
@@ -37,7 +27,7 @@ class NavigationBar extends StatelessWidget {
     );
   }
 
-  Widget drawerItemWidget({BuildContext context, DrawerItem drawerItem}) {
+  Widget drawerItemWidget({BuildContext context, CategoryItem drawerItem}) {
     return Column(
       children: [
         ListTile(
@@ -52,16 +42,4 @@ class NavigationBar extends StatelessWidget {
       ],
     );
   }
-}
-
-class DrawerItem {
-  final String value;
-  final IconData icon;
-  final String route;
-
-  DrawerItem({
-    this.value,
-    this.icon,
-    this.route,
-  });
 }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_apra/theme.dart';
 
-class ApppRangeSlider extends StatefulWidget {
+class AppRangeSlider extends StatefulWidget {
   final Function(double) onChange;
   final int step;
   final double max;
@@ -9,7 +9,7 @@ class ApppRangeSlider extends StatefulWidget {
   final double defaultValue;
   final Color color;
 
-  ApppRangeSlider(
+  AppRangeSlider(
       {@required this.onChange,
       this.max,
       this.min,
@@ -18,7 +18,7 @@ class ApppRangeSlider extends StatefulWidget {
       this.color});
 
   @override
-  _ApppRangeSlider createState() => _ApppRangeSlider(
+  _AppRangeSlider createState() => _AppRangeSlider(
       max: max,
       min: min,
       onChange: onChange,
@@ -27,7 +27,7 @@ class ApppRangeSlider extends StatefulWidget {
       color: color);
 }
 
-class _ApppRangeSlider extends State<ApppRangeSlider> {
+class _AppRangeSlider extends State<AppRangeSlider> {
   double value = 0;
   double defaultValue;
   Function(double) onChange;
@@ -36,7 +36,7 @@ class _ApppRangeSlider extends State<ApppRangeSlider> {
   double min;
   Color color;
 
-  _ApppRangeSlider(
+  _AppRangeSlider(
       {@required this.onChange,
       @required this.max,
       @required this.min,
