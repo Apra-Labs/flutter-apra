@@ -1,17 +1,36 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_apra/containers/bottom_actionbar.dart';
+import 'package:flutter_apra/controllers/location_service.dart';
 import 'package:flutter_apra/pages/home/maps/directions.dart';
 import 'package:flutter_apra/pages/home/maps/location_marker.dart';
 import 'package:flutter_apra/pages/home/maps/location_picker.dart';
 import 'package:flutter_apra/pages/home/maps/maps_demo.dart';
 
-class TabBarPage extends StatelessWidget {
+class TabBarPage extends StatefulWidget {
+  @override
+  _TabBarPageState createState() => _TabBarPageState();
+}
+
+class _TabBarPageState extends State<TabBarPage> {
   final List<IconItem> tabs = [
-    IconItem(icon: Icons.location_on, text: "  Maps  "),
-    IconItem(icon: Icons.add_location, text: "  Picker  "),
+    IconItem(icon: Icons.location_on, text: "Maps"),
+    IconItem(icon: Icons.add_location, text: "Picker"),
     IconItem(icon: Icons.add_location_alt, text: "Markers"),
     IconItem(icon: Icons.directions, text: "Directions"),
   ];
+
+  @override
+  void initState() {
+    initLocation();
+    super.initState();
+  }
+
+  void initLocation() async {
+    final currentPosition = await LocationService().getCurrentPosition();
+    debugPrint(currentPosition.latitude.toString());
+    debugPrint(currentPosition.longitude.toString());
+  }
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(

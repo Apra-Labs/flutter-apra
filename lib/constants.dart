@@ -28,6 +28,7 @@ class AppRoutes {
   static const String AuthPage = "/root/auth";
   static const String Dialogs = "/root/dialog";
   static const String TabBarPage = "/root/tab_bar";
+  static const String WebViewPage = "/root/web_view";
   static const String NetworkPage = "/root/network";
   static const String EditTextField = "/root/edit_text";
   static const String GradientPage = "/root/gradient";

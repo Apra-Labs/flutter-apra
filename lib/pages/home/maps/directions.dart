@@ -15,8 +15,8 @@ class _DirectionsState extends State<Directions> {
   PolylinePoints _polylinePoints;
   List<LatLng> polylineCoordinates = [];
 
-  LatLng _source = LatLng(12.91219847727415, 77.63790853321552);
-  LatLng _desitination = LatLng(12.905885963257015, 77.64406219124794);
+  LatLng _source = LatLng(12.90987264356009, 77.63791490346193);
+  LatLng _desitination = LatLng(12.912316778199783, 77.64442127197981);
 
   CameraPosition _initial;
   final Set<Marker> _markers = {};
@@ -26,19 +26,19 @@ class _DirectionsState extends State<Directions> {
   void initState() {
     _initial = CameraPosition(
       target: LatLng(12.912191941309773, 77.64451783150434),
-      zoom: 15.2,
+      zoom: 15,
     );
     _markers.add(
       Marker(
           markerId: MarkerId("1"),
           position: _source,
-          infoWindow: InfoWindow(title: "Source")),
+          infoWindow: InfoWindow(title: "Third Wave Coffee")),
     );
     _markers.add(
       Marker(
           markerId: MarkerId("2"),
           position: _desitination,
-          infoWindow: InfoWindow(title: "Destination")),
+          infoWindow: InfoWindow(title: "Apra Labs")),
     );
     createPolyLines(_source, _desitination,);
     super.initState();

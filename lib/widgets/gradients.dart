@@ -7,7 +7,7 @@ class Gradients {
           end: Alignment.bottomCenter,
           stops: [
             0.2,
-            0.4
+            0.45
           ],
           colors: [
             AppColors.light,

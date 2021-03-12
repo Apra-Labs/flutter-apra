@@ -14,9 +14,8 @@ class DialogPage extends StatelessWidget {
       title: PageTitles.Dialogs,
       body: Column(
         children: [
-
           Button(
-            label: "Message popup",
+            label: "Message Dialog",
             onPressed: () {
               showDialog(
                   context: context,
@@ -44,7 +43,7 @@ class DialogPage extends StatelessWidget {
             height: 20,
           ),
           Button(
-            label: "Range popup",
+            label: "Range Dialog",
             onPressed: () {
               showDialog(
                   context: context,
@@ -66,7 +65,7 @@ class DialogPage extends StatelessWidget {
             height: 20,
           ),
           Button(
-            label: "List popup",
+            label: "List Dialog",
             onPressed: () {
               showDialog(
                   context: context,
@@ -105,9 +104,19 @@ class DialogPage extends StatelessWidget {
                   });
             },
           ),
+          SizedBox(
+            height: 20,
+          ),
+          Button(
+            onPressed: () async {
+              Utils.showProgressBar(context, message: null);
+              await Future.delayed(Duration(seconds: 5));
+              Navigator.of(context).pop();
+            },
+            label: "Loading Dialog",
+          ),
         ],
       ),
-      
     );
   }
 }

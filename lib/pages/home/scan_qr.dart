@@ -16,6 +16,8 @@ class _ScanQrState extends State<ScanQr> {
   QRViewController qrViewController;
   bool flashStatus = false;
 
+  String qrData = '';
+
   @override
   Widget build(BuildContext context) {
     return ApplicationPage(
@@ -47,6 +49,13 @@ class _ScanQrState extends State<ScanQr> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
+                    Expanded(
+                      child: Container(
+                        child: Center(
+                          child: Text(qrData),
+                        ),
+                      ),
+                    ),
                     Container(
                       width: 50.0,
                       height: 50.0,
@@ -107,7 +116,9 @@ class _ScanQrState extends State<ScanQr> {
   void _onQRViewCreated(QRViewController controller) {
     this.qrViewController = controller;
     controller.scannedDataStream.listen((scanData) {
-      print(scanData.code);
+      setState(() {
+        qrData = scanData.code;
+      });
     });
   }
 }

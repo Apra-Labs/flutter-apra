@@ -10,6 +10,7 @@ import 'package:flutter_apra/pages/home/network_page.dart';
 import 'package:flutter_apra/pages/home/scan_qr.dart';
 import 'package:flutter_apra/pages/home/tab_bar_page.dart';
 import 'package:flutter_apra/pages/root.dart';
+import 'package:flutter_apra/pages/web_view_page.dart';
 import 'package:flutter_apra/splash_screen.dart';
 import 'package:flutter_apra/theme.dart';
 
@@ -38,6 +39,7 @@ class AppRouting extends StatelessWidget {
         AppRoutes.GenerateQr: (context) => GenerateQr(),
         AppRoutes.CircularLinearBar: (context) => CircularLinearBar(),
         AppRoutes.Dialogs: (context) => DialogPage(),
+        AppRoutes.WebViewPage: (context) => WebViewPage(),
       },
     );
   }

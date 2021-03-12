@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_apra/constants.dart';
 import 'package:flutter_apra/controllers/utils.dart';
 
 class NavigationBar extends StatelessWidget {
@@ -12,8 +13,14 @@ class NavigationBar extends StatelessWidget {
       child: Column(
         children: [
           DrawerHeader(
-              child: Image(
-            image: AssetImage("assets/apra_logo.png"),
+              child: GestureDetector(
+            onTap: () {
+              Navigator.of(context).pop();
+              RouteUtils.goToPage(context, AppRoutes.WebViewPage);
+            },
+            child: Image(
+              image: AssetImage("assets/apra_logo.png"),
+            ),
           )),
           Expanded(
             child: ListView.builder(

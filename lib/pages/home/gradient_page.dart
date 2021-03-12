@@ -9,6 +9,9 @@ class GradientPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ApplicationPage(
+      title: "",
+      extendBodyBehindAppBar: true,
+      appBarBackgroundColor: Colors.transparent,
       gradient: Gradients.gradient1,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,

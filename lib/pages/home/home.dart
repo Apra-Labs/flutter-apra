@@ -9,8 +9,8 @@ class Home extends StatelessWidget {
     return ListView.builder(
         padding: EdgeInsets.zero,
         itemCount: categoryItems.length,
-        itemBuilder: (context, index) => buttonWidget(
-            context: context, categoryItem: categoryItems[index]));
+        itemBuilder: (context, index) =>
+            buttonWidget(context: context, categoryItem: categoryItems[index]));
   }
 
   Widget buttonWidget({BuildContext context, CategoryItem categoryItem}) {
@@ -18,6 +18,8 @@ class Home extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
       child: Button(
           label: categoryItem.value,
+          trailingIcon: Icon(Icons.arrow_forward),
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           onPressed: () {
             RouteUtils.goToPage(context, categoryItem.route);
           }),
