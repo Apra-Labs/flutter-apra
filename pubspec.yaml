@@ -37,6 +37,7 @@ dependencies:
 
   google_maps_flutter:
   geolocator: 
+  image_picker: 
 
   #state-management
   flutter_riverpod: ^0.12.4

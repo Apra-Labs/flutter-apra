@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_apra/controllers/utils.dart';
 import 'package:flutter_apra/theme.dart';
@@ -7,6 +9,7 @@ import 'package:flutter_apra/widgets/drop_down.dart';
 import 'package:flutter_apra/widgets/radio.dart';
 import 'package:flutter_apra/widgets/textinput.dart';
 import 'package:flutter_apra/widgets/time_picker.dart';
+import 'package:image_picker/image_picker.dart';
 
 class Profile extends StatefulWidget {
   @override
@@ -15,6 +18,51 @@ class Profile extends StatefulWidget {
 
 class _ProfileState extends State<Profile> {
   String groupValue;
+  File _image;
+  final picker = ImagePicker();
+
+  void _pickImage({ImageSource imageSource}) async {
+    PickedFile pickedImage =
+        await picker.getImage(source: imageSource, imageQuality: 50);
+
+    setState(() {
+      if (pickedImage != null) {
+        _image = File(pickedImage.path);
+      } else {
+        print('No image selected.');
+      }
+    });
+  }
+
+  void _showPicker(context) {
+    showModalBottomSheet(
+        context: context,
+        builder: (BuildContext buildContext) {
+          return SafeArea(
+            child: Container(
+              child: Wrap(
+                children: <Widget>[
+                  ListTile(
+                      leading: Icon(Icons.photo_library),
+                      title: Text('Photo Library'),
+                      onTap: () {
+                        _pickImage(imageSource: ImageSource.gallery);
+                        Navigator.of(context).pop();
+                      }),
+                  ListTile(
+                    leading: Icon(Icons.photo_camera),
+                    title: Text('Camera'),
+                    onTap: () {
+                      _pickImage(imageSource: ImageSource.camera);
+                      Navigator.of(context).pop();
+                    },
+                  ),
+                ],
+              ),
+            ),
+          );
+        });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -22,6 +70,44 @@ class _ProfileState extends State<Profile> {
       padding: EdgeInsets.all(20.0),
       child: Column(
         children: [
+          SizedBox(
+            height: 20,
+          ),
+          Center(
+            child: GestureDetector(
+              onTap: () {
+                _showPicker(context);
+              },
+              child: CircleAvatar(
+                radius: 55,
+                backgroundColor: AppColors.primary,
+                child: _image != null
+                    ? ClipRRect(
+                        borderRadius: BorderRadius.circular(50),
+                        child: Image.file(
+                          _image,
+                          width: 100,
+                          height: 100,
+                          fit: BoxFit.cover,
+                        ),
+                      )
+                    : Container(
+                        decoration: BoxDecoration(
+                            color: Colors.grey[200],
+                            borderRadius: BorderRadius.circular(50)),
+                        width: 100,
+                        height: 100,
+                        child: Icon(
+                          Icons.camera_alt,
+                          color: Colors.grey[800],
+                        ),
+                      ),
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 20,
+          ),
           TextInput(
             borderStyle: BorderStyle.solid,
             onChange: (value) {},
