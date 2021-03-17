@@ -44,7 +44,7 @@ class _ProfileState extends State<Profile> {
                 children: <Widget>[
                   ListTile(
                       leading: Icon(Icons.photo_library),
-                      title: Text('Photo Library'),
+                      title: Text('Gallery'),
                       onTap: () {
                         _pickImage(imageSource: ImageSource.gallery);
                         Navigator.of(context).pop();

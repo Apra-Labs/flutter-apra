@@ -13,7 +13,7 @@ class PageTitles {
   static const String TabBar = "Tab Bar";
   static const String GradientPage = "Gradient Page";
   static const String Settings = "Settings";
-  static const String ApraLabs = "Apra Labs, India";
+  static const String ApraLabs = "Apra Labs";
   static const String QRCode = "Qr Code";
   static const String Authentication = "Authentication";
   static const String CircularLinearBar = "Circular/Linear Bar";

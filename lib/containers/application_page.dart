@@ -5,6 +5,7 @@ import 'package:flutter_apra/containers/fab.dart';
 
 class ApplicationPage extends StatelessWidget {
   final String title;
+  final TextStyle titleTextStyle;
   final bool showFab;
   final bool showBottomNavigationBar;
   final Widget body;
@@ -22,6 +23,7 @@ class ApplicationPage extends StatelessWidget {
 
   ApplicationPage(
       {this.title,
+      this.titleTextStyle,
       @required this.body,
       this.showBottomNavigationBar = false,
       this.actions = const [],
@@ -48,13 +50,13 @@ class ApplicationPage extends StatelessWidget {
     return Scaffold(
       appBar: title != null
           ? AppBar(
-        title: Text(title),
-        actions: actions,
-        backgroundColor: appBarBackgroundColor,
-        toolbarHeight: toolbarHeight,
-        centerTitle: centerTitle,
-        elevation: elevation,
-      )
+              title: Text(title, style: titleTextStyle),
+              actions: actions,
+              backgroundColor: appBarBackgroundColor,
+              toolbarHeight: toolbarHeight,
+              centerTitle: centerTitle,
+              elevation: elevation,
+            )
           : null,
       backgroundColor: backgroundColor,
       extendBodyBehindAppBar: extendBodyBehindAppBar,

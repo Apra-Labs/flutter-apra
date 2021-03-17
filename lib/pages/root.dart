@@ -3,6 +3,7 @@ import 'package:flutter_apra/constants.dart';
 import 'package:flutter_apra/containers/application_page.dart';
 import 'package:flutter_apra/pages/profile/profile.dart';
 import 'package:flutter_apra/providers/bottom_actionbar_provider.dart';
+import 'package:flutter_apra/theme.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'home/home.dart';
@@ -14,6 +15,10 @@ class RootPage extends StatelessWidget {
       final bottomIndex = watch(bottomIndexProvider.state);
       return ApplicationPage(
         title: PageTitles.ApraLabs,
+        titleTextStyle: TextStyle(
+            fontFamily: 'Comfortaa',
+            fontWeight: FontWeight.bold,
+            fontSize: FontSize.large),
         showSideNavigationBar: showSideNavigationBar(bottomIndex),
         centerTitle: true,
         padding: EdgeInsets.zero,
